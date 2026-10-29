@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <title>Connecting to Personal eBay Listing Review</title>
+  </head>
+  <body>
+    <main>
+      <p>Returning to the local listing review tool…</p>
+      <p>If it does not open, make sure the tool is running and <a id="return-link" href="http://localhost:4173/">return manually</a>.</p>
+    </main>
+    <script>
+      const localCallback = new URL('http://localhost:4173/oauth/callback');
+      localCallback.search = window.location.search;
+      document.querySelector('#return-link').href = localCallback.toString();
+      window.location.replace(localCallback.toString());
+    </script>
+  </body>
+</html>
